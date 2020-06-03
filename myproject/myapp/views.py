@@ -21,7 +21,9 @@ def form_view(request):
             print("name : " + form.cleaned_data["name"])
             print("Email : " + form.cleaned_data["email"])
             print("Text: " + form.cleaned_data["text"])
-    form=forms.loginform
+    else:
+
+        form=forms.loginform()
     return render (request,'myapp\index.html',{'form':form})
 
 
