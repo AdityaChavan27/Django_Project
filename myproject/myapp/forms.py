@@ -1,5 +1,9 @@
 from django import forms
 from django.core import validators
+from django.forms import ModelForm
+from.models import login
+
+
 
 # def check(value):
 #     if not any(i.isupper() for i in value):
@@ -18,20 +22,28 @@ from django.core import validators
 #             count+=1
 #     if(count<2):
 #         raise forms.ValidationError("Please enter 2 Special Characters")
+#
+class loginform(forms.ModelForm):
+    class Meta:
+        model = login
+        fields = '__all__'
 
-class loginform(forms.Form):
-    name=forms.CharField(label="Enter your name ")
-    email=forms.EmailField(max_length=30)
-    verify_email=forms.EmailField(label="Repeat Email")
-    text=forms.CharField(widget=forms.Textarea)
-    #password=forms.CharField(widget=forms.PasswordInput,validators=[check,check1,check2,check3])
+#     name=forms.CharField(label="Enter your name ")
+#     email=forms.EmailField(max_length=30)
+#     verify_email=forms.EmailField(label="Repeat Email")
+#     text=forms.CharField(widget=forms.Textarea)
+#     password=forms.CharField(widget=forms.PasswordInput,validators=[check,check1,check2,check3])
+#
+#
+#     def clean(self):
+#         email = self.cleaned_data.get('email')
+#         vemail = self.cleaned_data.get('verify_email')
+#         if email !=vemail:
+#             raise forms.ValidationError("Please provide the correct email address")
 
 
-    def clean(self):
-        email = self.cleaned_data.get('email')
-        vemail = self.cleaned_data.get('verify_email')
-        if email !=vemail:
-            raise forms.ValidationError("Please provide the correct email address")
+
+
 
 
 
