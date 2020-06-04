@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup Records Records</title>
+     {% load staticfiles %}
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+            <th> Name</th>
+            <th> Password</th>
+            <th> Email</th>
+        </tr>
+        {% for login in logins %}
+        <tr>
+            <th> {{login.Name}}</th>
+            <th> {{login.Password}}</th>
+            <th> {{login.Email}}</th>
+        </tr>
+<!-- <a href="/delete/{{ employee.id }}">DELETE</a>
+<a href="/edit/{{ employee.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a> -->
+        </td>
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+<!-- <center><a href="/emp" class="btn btn-primary">Add New Records</a></center>
+ -->
+</body>
+</html>

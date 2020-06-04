@@ -7,5 +7,6 @@ urlpatterns = [
     path('contact_info',views.contact),
     path('home1',views.home1),
     path('register/',views.create,name="register"),
-    path('success',views.success,name='success')
+    path('success',views.success,name='success'),
+    path('show',views.show,name='show'),
 ]

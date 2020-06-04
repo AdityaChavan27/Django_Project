@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from . import forms
-
+from.models import login
 def home(request):
     return render(request,"myapp\home.html")
 def aboutus(request):
@@ -32,7 +32,7 @@ def create(request):
         form=forms.loginform(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('success')
+            return redirect('show')
     else:
         form=forms.loginform()
 
@@ -41,6 +41,11 @@ def create(request):
 
 def success(request):
     return render(request,'myapp/success.html')
+
+
+def show(request):
+    logins=login.objects.all()
+    return render(request,"myapp/show.html",{'logins':logins})
 
 
 # Create your views here.
