@@ -53,5 +53,15 @@ def destroy(request,id):
     logins.delete()
     return redirect("show")
 
+def edit(request,id):
+    logins=login.objects.get(id=id)
+    return render(request,"myapp/edit.html",{'logins':logins})
 
+def update(request,id):
+    logins=login.objects.get(id=id)
+    form=forms.loginform(request.POST,instance=logins)
+    if form.is_valid():
+        form.save()
+        return redirect("show")
+    return render(request,'myapp/edit.html',{'logins':logins})
 # Create your views here.
