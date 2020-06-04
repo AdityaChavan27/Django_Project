@@ -9,4 +9,5 @@ urlpatterns = [
     path('register/',views.create,name="register"),
     path('success',views.success,name='success'),
     path('show',views.show,name='show'),
+    path('delete/<int:id>',views.destroy,name='delete')
 ]

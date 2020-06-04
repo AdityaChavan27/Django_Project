@@ -14,12 +14,19 @@
             <th> Name</th>
             <th> Password</th>
             <th> Email</th>
+            <th> Actions </th>
         </tr>
+    </thead>
+    <tbody>
         {% for login in logins %}
         <tr>
-            <th> {{login.Name}}</th>
-            <th> {{login.Password}}</th>
-            <th> {{login.Email}}</th>
+            <td> {{login.Name}}</td>
+            <td> {{login.Password}}</td>
+            <td> {{login.Email}}</td>
+            <td>
+                <a href="delete/{{login.id}} "   class ="btn btn-default"> DELETE</a>
+            </td>
+
         </tr>
 <!-- <a href="/delete/{{ employee.id }}">DELETE</a>
 <a href="/edit/{{ employee.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a> -->
@@ -30,7 +37,7 @@
 </table>
 <br>
 <br>
-<!-- <center><a href="/emp" class="btn btn-primary">Add New Records</a></center>
+<center><a href="register" class="btn btn-primary">Add New Records</a></center>
  -->
 </body>
 </html>

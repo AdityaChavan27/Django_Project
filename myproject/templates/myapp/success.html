@@ -1,8 +1,9 @@
 <html>
 
 <head>
-
-    <h1> congratulations!!!!you are suceessful to login </h1>
+        {%for login in logins%}
+    <h1> congratulations!!!!{{login.Name}}you are suceessful to login </h1>
+        {% endfor %}
 </head>
 
 </html>

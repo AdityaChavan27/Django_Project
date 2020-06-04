@@ -48,4 +48,10 @@ def show(request):
     return render(request,"myapp/show.html",{'logins':logins})
 
 
+def destroy(request,id):
+    logins=login.objects.get(id=id)
+    logins.delete()
+    return redirect("show")
+
+
 # Create your views here.
